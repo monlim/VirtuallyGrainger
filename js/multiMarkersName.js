@@ -3,6 +3,8 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
+var percysURLArray=[];
+var percysNameArray=[];
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
