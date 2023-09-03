@@ -6,12 +6,12 @@ var markersNameArray=[];
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
-		console.log('Add markers to the scene');
+		//console.log('Add markers to the scene');
 
 		var sceneEl = document.querySelector('a-scene');
 		
 		//list of the markers
-		for(var i=1; i<19; i++)
+		for(var i=1; i<4; i++)
 		{
 			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 			markersURLArray.push(url);
@@ -19,7 +19,15 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		for(var k=0; k<18; k++)
+		//list of the Percy assets
+		for(var i=1; i<4; i++)
+		{
+			var urlPercy="PercyGLBs/percy-"+i+".glb";
+			percysURLArray.push(urlPercy);
+			percysNameArray.push('Percy_'+i);
+		}
+
+		for(var k=0; k<4; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			markerEl.setAttribute('type','pattern');
@@ -30,14 +38,16 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(markerEl);
 
 			//Adding text to each marker
-			var textEl = document.createElement('a-entity');
-			
-			textEl.setAttribute('id','text');
-			textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
-			textEl.object3D.position.set(0, 0.7, 0);
-			textEl.object3D.rotation.set(-90, 0, 0);
+			var percyEl = document.createElement('a-entity');
+			percyEl.setAttribute ('response-type', 'arraybuffer');
+			percyEl.setAttribute('url', percysURLArray[k]);
+			percyEl.setAttribute('gltf-model', percysNameArray[k]);
+			percyEl.setAttribute('scale', '2 2 2');
+			percyEl.setAttribute('position', '0 0 0');
+			percyEl.setAttribute('rotation', '0 45 0');
+			percyEl.setAttribute('animation-mixer', "clip:Armature|mixamo.com|Layer0; loop:infinite")			
 
-			markerEl.appendChild(textEl);
+			markerEl.appendChild(percyEl);
 		}
 	}
 });
