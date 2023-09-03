@@ -22,7 +22,7 @@ AFRAME.registerComponent('markers_start',{
 		//list of the Percy assets
 		for(var i=1; i<4; i++)
 		{
-			var urlPercy="PercyGLBs/percy-"+i+".glb";
+			var urlPercy="PercyGLBs/Percy-"+i+".glb";
 			percysURLArray.push(urlPercy);
 			percysNameArray.push('Percy_'+i);
 		}
