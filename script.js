@@ -13,7 +13,7 @@ AFRAME.registerComponent('registerevents', {
 			});
 		},
 	});
-
+/*
 AFRAME.registerComponent('soundhandler', {
     tick: function () {
            var entity = document.querySelector('[sound]');
@@ -25,3 +25,4 @@ AFRAME.registerComponent('soundhandler', {
 
      }
 });
+*/
