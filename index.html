@@ -1,12 +1,45 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title> Virtually Grainger </title>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <style>
+      #loading_indicator {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: auto;
+         border: 10px solid grey;
+         border-radius: 50%;
+         border-top: 10px solid black;
+         width: 100px;
+         height: 100px;
+         animation: spinIndicator 1s linear infinite;
+      }
+      @keyframes spinIndicator {
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+   </style>
   </head>
   <body>
+    <div id = "loading_indicator"> </div>
+   <script>
+      document.onreadystatechange = function () {
+         if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.getElementById("loading_indicator").style.visibility = "visible";
+         } else {
+            setTimeout(() => {
+               document.getElementById("loading_indicator").style.display ="none";
+               document.querySelector("body").style.visibility = "visible";
+            }, 4000)
+         }
+      };
+   </script>
     <a-scene
       markers_start
       vr-mode-ui="enabled: false"
@@ -19,60 +52,150 @@
         <a-asset-item
           id="Percy1"
           response-type="arraybuffer"
-          src="/PercyGLBs/Percy-1.glb"
+          src="/GLBs/Hammeringly3.glb"
         ></a-asset-item>
         <a-asset-item
           id="Percy2"
           response-type="arraybuffer"
-          src="/PercyGLBs/Percy-2.glb"
+          src="/GLBs/Middling.glb"
         ></a-asset-item>
         <a-asset-item
           id="Percy3"
           response-type="arraybuffer"
-          src="/PercyGLBs/Percy-3.glb"
+          src="/GLBs/Middling.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="Percy4"
+          response-type="arraybuffer"
+          src="/GLBs/Trumpet.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="Ella1"
+          response-type="arraybuffer"
+          src="/GLBs/EllaChippy.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="Ella2"
+          response-type="arraybuffer"
+          src="/GLBs/EllaFeelinglessly.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="Ella3"
+          response-type="arraybuffer"
+          src="EllaViolently.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="Ella4"
+          response-type="arraybuffer"
+          src="/GLBs/EllaFrolicsomely.glb"
         ></a-asset-item>
       </a-assets>
+
       <a-marker
         type="pattern"
         preset="custom"
-        url="/resources/markers/pattern-Marker1.patt"
+        url="/Markers/pattern-Marker1.patt"
       >
         <a-entity
           gltf-model="#Percy1"
           scale="2. 2. 2."
-          rotation="0 45 0"
-          position="0 0 0"
-          animation-mixer="clip:Armature|mixamo.com|Layer0; loop:infinite"
+          rotation="0 0 0"
+          position="-0.5 0 2"
+          animation-mixer="clip:Hammeringly_Forest_remap; loop:infinite; timeScale: 2"
         ></a-entity>
       </a-marker>
       <a-marker
         type="pattern"
         preset="custom"
-        url="/resources/markers/pattern-Marker2.patt"
+        url="/Markers/pattern-Marker2.patt"
       >
         <a-entity
           gltf-model="#Percy2"
-          scale="2. 2. 2."
-          rotation="0 45 0"
-          position="0 0 0"
-          animation-mixer="clip:Armature|mixamo.com|Layer0; loop:infinite"
+          scale="2.0 2.0 2.0"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          animation-mixer="clip:Middling_Slowish_Gloria_remap; loop:infinite; timeScale: 2"
         ></a-entity>
       </a-marker>
       <a-marker
         type="pattern"
         preset="custom"
-        url="/resources/markers/pattern-Marker3.patt"
+        url="/Markers/pattern-Marker3.patt"
       >
         <a-entity
           gltf-model="#Percy3"
           scale="2. 2. 2."
-          rotation="0 45 0"
-          position="0 0 0"
-          animation-mixer="clip:Armature|mixamo.com|Layer0; loop:infinite"
+          rotation="0 0 0"
+          position="-1 0 1.5"
+          animation-mixer="clip:Trumpet_like_Forest_remap; loop:infinite; timeScale: 2"
+        ></a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="/Markers/pattern-Marker4.patt"
+      >
+        <a-entity
+          gltf-model="#Percy4"
+          scale="2 2 2"
+          rotation="0 0 0"
+          position="2 0 -0.5"
+          animation-mixer="clip:Clingingly_Gloria_remap; loop:infinite; timeScale: 1"
+        ></a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="/Markers/pattern-Marker5.patt"
+      >
+        <a-entity
+          gltf-model="#Ella1"
+          scale="1.7 1.7 1.7"
+          rotation="0 0 0"
+          position="-0.5 0 1.5"
+          animation-mixer="clip:Chippy_Forest_remap; loop:infinite; timeScale: 4"
+        ></a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="/Markers/pattern-Marker6.patt"
+      >
+        <a-entity
+          gltf-model="#Ella2"
+          scale="1.7 1.7 1.7"
+          rotation="0 0 0"
+          position="0.5 0 -3"
+          animation-mixer="clip:Feelinglessly_Forest_remap; loop:infinite; timeScale: 1"
+        ></a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="/Markers/pattern-Marker7.patt"
+      >
+        <a-entity
+          gltf-model="#Ella3"
+          scale="1.7 1.7 1.7"
+          rotation="0 0 0"
+          position="0 0 2"
+          animation-mixer="clip:Violently_Gloria_remap; loop:infinite; timeScale: 2"
+        ></a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="/Markers/pattern-Marker8.patt"
+      >
+        <a-entity
+          gltf-model="#Ella4"
+          scale="1.7 1.7 1.7"
+          rotation="0 0 0"
+          position="-1.2 0 -1.7"
+          animation-mixer="clip:Frolicsomely_Duo_remap; loop:infinite; timeScale: 4"
         ></a-entity>
       </a-marker>
       <a-entity camera> </a-entity>
     </a-scene>
   </body>
 </html>
-
