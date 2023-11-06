@@ -1,166 +1,145 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
-    <style>
-      #loading_indicator {
-         position: absolute;
-         top: 0;
-         bottom: 0;
-         left: 0;
-         right: 0;
-         margin: auto;
-         border: 10px solid grey;
-         border-radius: 50%;
-         border-top: 10px solid black;
-         width: 100px;
-         height: 100px;
-         animation: spinIndicator 1s linear infinite;
-      }
-      @keyframes spinIndicator {
-         100% {
-            transform: rotate(360deg);
-         }
-      }
-   </style>
   </head>
   <body>
-    <div id = "loading_indicator"> </div>
-   <script>
-      document.onreadystatechange = function () {
-         if (document.readyState !== "complete") {
-            document.querySelector("body").style.visibility = "hidden";
-            document.getElementById("loading_indicator").style.visibility = "visible";
-         } else {
-            setTimeout(() => {
-               document.getElementById("loading_indicator").style.display ="none";
-               document.querySelector("body").style.visibility = "visible";
-            }, 1000)
-         }
-      };
-   </script>
-    <a-scene
-      markers_start
-      vr-mode-ui="enabled: false"
-      color-space="sRGB"
-      renderer="colorManagement: true"
-      embedded
-      arjs="debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;"
-    >
-      <a-assets>
-        <a-asset-item
-          id="Ella1"
-          response-type="arraybuffer"
-          src="/GLBs/EllaChippy.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="Ella2"
-          response-type="arraybuffer"
-          src="/GLBs/EllaFeelinglessly.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="Ella3"
-          response-type="arraybuffer"
-          src="/GLBs/EllaViolently.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="Ella4"
-          response-type="arraybuffer"
-          src="/GLBs/EllaFrolicsomely.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="Ella5"
-          response-type="arraybuffer"
-          src="/GLBs/EllaChippy.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="Ella6"
-          response-type="arraybuffer"
-          src="/GLBs/EllaFeelinglessly.glb"
-        ></a-asset-item>
-      </a-assets>
-
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker2.patt"
-      >
-        <a-entity
-          gltf-model="#Ella1"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="-0.5 0 1.5"
-          animation-mixer="clip:Chippy_Forest_remap; loop:infinite; timeScale: 4"
-        ></a-entity>
-      </a-marker>
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker3.patt"
-      >
-        <a-entity
-          gltf-model="#Ella2"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="0.5 0 -3"
-          animation-mixer="clip:Feelinglessly_Forest_remap; loop:infinite; timeScale: 1"
-        ></a-entity>
-      </a-marker>
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker4.patt"
-      >
-        <a-entity
-          gltf-model="#Ella3"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="0 0 2"
-          animation-mixer="clip:Violently_Gloria_remap; loop:infinite; timeScale: 2"
-        ></a-entity>
-      </a-marker>
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker5.patt"
-      >
-        <a-entity
-          gltf-model="#Ella4"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="-1.2 0 -1.7"
-          animation-mixer="clip:Frolicsomely_Duo_remap; loop:infinite; timeScale: 4"
-        ></a-entity>
-      </a-marker>
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker6.patt"
-      >
-        <a-entity
-          gltf-model="#Ella1"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="-0.5 0 1.5"
-          animation-mixer="clip:Chippy_Forest_remap; loop:infinite; timeScale: 4"
-        ></a-entity>
-      </a-marker>
-      <a-marker
-        type="pattern"
-        preset="custom"
-        url="/Markers/pattern-Marker7.patt"
-      >
-        <a-entity
-          gltf-model="#Ella2"
-          scale="1.7 1.7 1.7"
-          rotation="0 0 0"
-          position="0.5 0 -3"
-          animation-mixer="clip:Feelinglessly_Forest_remap; loop:infinite; timeScale: 1"
-        ></a-entity>
-      </a-marker>
-      
-      <a-entity camera> </a-entity>
-    </a-scene>
+    <h1>
+      INTERACTIVE COMPOSITION ARTIST STATEMENTS
+    </h1>
+    <h2>
+      Lachlan Black
+    </h2>
+    <p>
+      Autocrrct, explores the interaction between AI and
+music through the lens of generative music. Lyrics are generated by
+Chat-GPT 4 using prompt generation techniques. Prompt generation in
+Chat-GPT 4 was also used to generate and import source code for
+various custom or modified existing Max for Live devices, such as
+the music visualiser used. Examining the cross-section between music
+and AI, the work attempts to shift focus from organic, temporal
+sounds, such as field recordings, to AI-generated melodic sequences
+highlighting the ways in which AI can be incorporated to coexist in
+creative spaces. Generative musical devices using AI, such as the
+VST plugin Magenta Studio were used as the creative starting point
+for all melodic material, which was then carefully edited in order
+to sound ‘human’.
+    </p>
+    <h2>
+      Ella Dawson
+    </h2>
+    <p>
+      I asked Junia AI to generate an image of an ‘ethereal soundtrack’. I gave no further description and allowed the AI to run the program. Junia’s answer was then pasted into MusicGen - Hugging Face by ‘Facebook’, I generated 7 different audio clips. With very minimal editing, I attached the audio files together in an order that felt the most coherent. My intent is to demonstrate my concerns about how easy it is becoming to create ambient and ‘non-focal’ sound. As someone who wishes to enter this field of work professionally, I’m becoming worried about the number of jobs available as AI becomes more advanced. 
+    </p>
+    <h2>
+      Nicholas Dullow
+    </h2>
+    <p>
+      Conceptually I sought to explore the use of AI within the workflow of pop music production. After many failed attempts experimenting with generated audio (never sounded quite right), I decided to use ChatGPT to function like a surrogate artist that would dictate the parameters of what I should make. I asked ChatGPT for the kinds of chords, genre tropes, and sound design I should use to make a good jazz-soul piece. To my surprise it was shockingly similar to working in the typical producer/artist relationship. The ChatGPT recommendations provided a clear set of limitations that I typically receive when producing someone else’s music. With the inclusion of Reuben Rasmussens vocals, I found this methodology surprisingly effective for enhancing the typical producer/artist workflow. 
+    </p>
+    <h2>
+      April Guest
+    </h2>
+    <p>
+      This work is an overdramatic painting of the collective societal fear of AI surpassing humanity in artistic and intellectual ability. This story is told musically through the shift from an acoustic, vocal sound palette to an electronic one, and symbolically through the climax being partially composed by AI. I retranslated and expanded the AI-generated sample, leveraging its intensity to tell a dramatized story. 
+    </p>
+    <h2>
+      Rachael Hobbs
+    </h2>
+    <p>
+      Exploring the world of Artificial Intelligence, this work is inspired by the processing of visual
+AI. Cutting and pasting frames together to create a moving visual, in the same way I have cut and
+pasted samples to create a cohesive melody. All samples were generated with AI. The piece aims
+to depict the decision making and ‘thought’ process behind the technology as it decides which
+samples to use and how to use them.
+    </p>
+    <h2>
+      Finn Inskter
+    </h2>
+    <p>
+      This work is an ambient piece utilising several pieces of music generated by MusicLM. I let the
+composition be driven by AI by asking it to expand on things it had generated, and the result is a
+muddy wash of soft harmony that demonstrates both the limitations (eq in particular) and
+possibilities of the technology. To symbolise humanity, a woman sings throughout, attempting to
+harmonise with both the bot and its societal implications.
+    </p>
+    <h2>
+      Brynn Jacka
+    </h2>
+    <p>
+      Reinforcement focuses on using maxmsp to craft a boutique generation tool, incorporate complex aleatoricism in real time, leading to unique compositional processes. Exploring reinforcing randomisation as the composition progresses decisions are reinforced and repeated, slowly unveiling new patterns that are responded to and explored by a live performer. 
+    </p>
+    <h2>
+      Sasha Kaiser
+    </h2>
+    <p>
+      An intertextual, meta and humorous interpretation about what AI music sounds like featuring both original and AI generated music. The prompt from the generations was to create music that sounded like AI generated music while simultaneously feeding the program AI generated music. The intertextuality created by these fragments of poetry are a product of asking ChatGPT to write a poem about the dangers of AI. Both the poem and occasional original writing have been sonified through AI Text-to-Speech programs. 
+    </p>
+    <h2>
+      Doreen Lee
+    </h2>
+    <p> In response to a creative brief exploring AI interaction, I used an AI-generated (typed “make a
+motif” in ChatGPT) pentatonic and atonal melody as the basis for a unique composition. Due to the
+strange tonality of the melody, I used a unique combination of instruments to divert audiences
+from picking up on the unusual note choices, creating a work that is not conventional and doesn’t
+have a fixed chord progression, hence I put the main focus on variation of rhythm and
+instrumental texture. My composition blends ethnic instruments like the pipa and guzheng with
+electronic synthesisers and Latin percussion, envisioning an interesting, unpredictably structured
+creative live performance. I believe I have met the brief because I explored with AI melody and
+effectively adapted my music piece to it.
+    </p>
+    <h2>
+      Oscar Lush
+    </h2>
+    <p>
+      I interacted with A.I. using Google Magenta’s tone transfer DDSP-VST, attempting to subvert its original purpose by feeding it choral polyphony. The A.I’s translation of Charles Gounod’s ‘St Cecilia Mass' was both unexpected & completely unique and I used these textures as the launching pad for an improvisation on trumpet & electronics, responding to and mimicking the tone transfer’s abstract sound-world.
+    </p>
+    <h2>
+      Reuben Rasmussen
+    </h2>
+    <p>
+      I explore the symbiosis of AI technology and human creativity, in a
+fantasy, retro-futuristic soundscape. Inspired conceptually and sonically by ‘Blade
+Runner’ I utilised an AI timbre shift to simulate my voice into an ambient trumpet,
+and saxophone. Ridley Scott’s vision and pivotal conflict with AI (called ‘Replicants’) is
+their similar interactive behaviour, which I symbolise metaphorically with the equal
+blend of voice, and AI sound. The spacious retro-futuristic effect is implied through
+the additive synths, replicating those analog synths used by Vangelis at the time of
+composition.
+    </p>
+    <h2>
+      Abby Reeves
+    </h2>
+    <p>
+      I used ChatGPT as a learning assistant to learn how to play in just intonation tuning on cello. It gave me tips on this which I found very helpful. It told me that it was important that I experiment with finger places and explore ratios/ tuning.  I used G as a base note and then built harmonics off that. 
+    </p>
+    <h2>
+      John Sharp
+    </h2>
+    <p>
+      ‘Celestial Harmony’ 
+●  I wanted to narratively express my feelings towards AI. 
+●  Begins creating more traditional music, then becomes post-modern and chaotic, then to a harmonious ending. Represents the intrigue, feeling of doom then eventual acceptance of AI.
+●  ChatGPT said I should base my piece off of ‘Clair Delune’ 
+●  I mostly used MusicGen by Meta, using the same sample with different prompts. 
+●  Doing this showed me how AI can aid creativity, not diminish it. 
+    </p>
+    <h2>
+      Charlie Stewart
+    </h2>
+    <p>
+      I strived to illustrate how A.I is a multistep process and a tool rather than a complete substitute for music making as a “humanistic” element must be present to create something interesting in some way. In the track itself, it explains the process moving from a human prompt, machine generated audio, algorithmic conversion and then finally a human polish. I found success in generating and creating the tracks, but the MIDI conversion step was very hard to make ‘sound good’ proving that this process of limited composition/arranging doesn’t necessarily sound good as there’s a lot of generated content by machines and not a person.
+    </p>
+    <h2>
+      Kaylah Thomas
+    </h2>
+    <p>
+      A response to our collaboration with Artificial Intelligence, this is a piece that explores the essence of AI creativity and its ethical implications. The composition features an AI-generated instrumental backdrop, responding to my prompts. Intertwined is a talk show dialogue with an AI robot, "Amica." The intention was to evoke compassion for AI entities, challenging our perception of them as mere machines. This narrative composition aims to engage the listener deeply, reflecting the traditional arc of a story. AI's creative capabilities are showcased through the backing, while effects like flanger, tremolo, and distortion introduce a hint of distortion to drive the narrative.
+    </p>
+    <h2>
+      Margaret Wozniak
+    </h2>
+    <p>
+      I wanted my work to feel was if the world was taken over by AI with computer machinery sound design elements, a futuristic feel and some voice to vocalise the “humans” coming back. For me music has a soul and the experience of life, it’s something an AI will never be able to replicate because intuitively I feel we’ll always feel as if somethings wrong.
+    </p>     
   </body>
 </html>
